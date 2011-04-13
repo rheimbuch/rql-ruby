@@ -5,3 +5,5 @@ gemspec
 
 gem "rspec", "~> 2.5.0"
 gem "rake"
+gem "yard"
+gem "bluecloth"
