@@ -20,6 +20,4 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency("execjs", "~> 0.1.1")
-
-  s.add_development_dependency('rspec', "~> 2.5.0")
 end
