@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "rql"
   s.version     = Rql::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Ryan Heimbuch"]
+  s.email       = ["rheimbuch@gmail.com"]
+  s.homepage    = "https://github.com/rheimbuch/rql-ruby"
+  s.summary     = %q{RQL Parsing and Querying}
+  s.description = %q{Allows querying of ruby data-structures/source using RQL (Resource Query Language).}
 
   s.rubyforge_project = "rql"
 
