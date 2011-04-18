@@ -5,6 +5,8 @@ require 'dm-core'
 module Rql
   module Evaluator
     class DataMapper
+      include Evaluator::Base
+      
       def and(*results)
         results.reduce(:&)
       end
