@@ -11,7 +11,7 @@ module Rack
       req = Rack::Request.new(env)
       qs = req.query_string
       
-      req.logger(qs)
+      req.logger.debug("QUERY_STRING: #{qs}")
       if !env['rql.query'] && qs
         begin
           env['rql.query'] = Rql[qs]
