@@ -10,8 +10,6 @@ module Rack
     def call(env)
       req = Rack::Request.new(env)
       qs = req.query_string
-      
-      req.logger.debug("QUERY_STRING: #{qs}")
 
       begin
         env['rql.query'] = Rql[qs]
