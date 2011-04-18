@@ -5,7 +5,7 @@ module Responders
       rql = request.env['rql.query']
       rql_error = request.env['rql.error']
       controller.logger.debug("RQL Query: #{rql.inspect}")
-      controller.logger.debug("RQL Error: #{rql_error}")
+      controller.logger.debug("RQL Error: #{rql_error.inspect}")
       if(rql)
         begin
           rql.on(super_resource)
