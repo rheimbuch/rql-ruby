@@ -3,7 +3,7 @@ module Responders
     def resource
       super_resource = super
       rql = request.env['rql.query']
-      rql_error = rquest.env['rql.error']
+      rql_error = request.env['rql.error']
       controller.logger.debug("RQL Query: #{rql.inspect}")
       controller.logger.debug("RQL Error: #{rql_error}")
       if(rql)
