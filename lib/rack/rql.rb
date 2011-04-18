@@ -12,12 +12,11 @@ module Rack
       qs = req.query_string
       
       req.logger.debug("QUERY_STRING: #{qs}")
-      if !env['rql.query'] && qs
-        begin
-          env['rql.query'] = Rql[qs]
-        rescue => e
-          env['rql.error'] = e
-        end
+
+      begin
+        env['rql.query'] = Rql[qs]
+      rescue => e
+        env['rql.error'] = e
       end
       
       @app.call(env)
