@@ -1,5 +1,6 @@
 require 'rql/query'
 require 'rql/evaluator/base'
+require 'dm-core'
 
 module Rql
   module Evaluator
@@ -54,5 +55,8 @@ module Rql
         results.all(:limit => count, :offset => start)
       end
     end
+
+    Query.register(DataMapper, ::DataMapper::Collection)
+    Query.register(DataMapper, ::DataMapper::Resource)
   end
 end
