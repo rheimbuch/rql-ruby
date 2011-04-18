@@ -11,10 +11,12 @@ module Rack
       req = Rack::Request.new(env)
       qs = req.query_string
 
-      begin
-        env['rql.query'] = Rql[qs]
-      rescue => e
-        env['rql.error'] = e
+      unless qs.empty?
+        begin
+          env['rql.query'] = Rql[qs]
+        rescue => e
+          env['rql.error'] = e
+        end
       end
       
       @app.call(env)
