@@ -56,7 +56,7 @@ module Rql
       end
     end
 
-    Query.register(DataMapper, ::DataMapper::Collection)
-    Query.register(DataMapper, ::DataMapper::Resource)
+    Query.register(::DataMapper::Collection, Evaluator::DataMapper)
+    Query.register(::DataMapper::Resource, Evaluator::DataMapper)
   end
 end
