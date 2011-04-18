@@ -1,5 +1,9 @@
 module Responders
   module RqlResponder
+    def resource
+      resources.last
+    end
+    
     def resources
       all_resources = super
       rql = request.env['rql.query']
