@@ -6,9 +6,6 @@ module Responders
       if(rql)
         begin
           rql.on(all_resources)
-        rescue => e
-          controller.logger.error(e)
-          all_resources
         end
       else
         all_resources
