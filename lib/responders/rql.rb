@@ -1,19 +1,15 @@
 module Responders
   module RqlResponder
     def resource
-      resources.last
-    end
-    
-    def resources
-      all_resources = super
+      super_resource = super
       rql = request.env['rql.query']
       controller.logger.debug("RQL Query: #{rql.inspect}")
       if(rql)
         begin
-          rql.on(all_resources)
+          rql.on(super_resource)
         end
       else
-        all_resources
+        super_resource
       end
     end
   end
