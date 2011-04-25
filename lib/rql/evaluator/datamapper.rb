@@ -56,6 +56,27 @@ module Rql
       def limit(count, start=0, results=target)
         results.all(:limit => count, :offset => start)
       end
+
+      def sort(*args)
+        orders = args.map{|s| parse_sort(s)}.compact
+        target.all(:order => orders)
+      end
+
+      private
+      def parse_sort(str)
+        match = str.match(/([+-])(\w+)/)
+        if(match)
+          dir = match[1]
+          field = match[2].to_s.to_sym
+          if dir == "-"
+            field = field.desc
+          else
+            field = field.asc
+          end
+          
+          field
+        end
+      end
     end
 
     Query.register(::DataMapper::Collection, Evaluator::DataMapper)
